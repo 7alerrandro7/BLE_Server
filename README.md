@@ -1,4 +1,4 @@
-# Bluetooth GATT Server Sample (Java)
+# BLE_Server
 
 This application demonstrates accessing the `BluetoothGattServer` Android API
 from within an Android Things application. The sample application advertises
