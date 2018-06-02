@@ -1,11 +1,8 @@
 package com.example.androidthings.gattserver;
 
-
 import android.os.Environment;
 import android.util.Log;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.security.*;
 import javax.crypto.*;
 
@@ -21,10 +18,16 @@ public class Secure {
         Log.i(TAG, text);
 
         //
-        // Recuperando a key de um arquivo
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream(path + "KeyFile.key"));
-        Key key = (Key)in.readObject();
-        in.close();
+        //Gera uma semente
+        String SecretSentence = "secreta";
+        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+        sr.setSeed(SecretSentence.getBytes("UTF8"));
+
+        //
+        // gera uma chave para o DES
+        KeyGenerator keyGen = KeyGenerator.getInstance("DES");
+        keyGen.init(56, sr);
+        Key key = keyGen.generateKey();
 
         //
         // define um objeto de cifra DES e imprime o provider utilizado
