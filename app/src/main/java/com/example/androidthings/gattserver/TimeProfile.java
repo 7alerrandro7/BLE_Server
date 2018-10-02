@@ -16,7 +16,6 @@
 
 package com.example.androidthings.gattserver;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
@@ -24,6 +23,8 @@ import android.bluetooth.BluetoothGattService;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.util.UUID;
+
+import static android.bluetooth.BluetoothGattCharacteristic.*;
 
 /**
  * Implementation of the Bluetooth GATT Time Profile.
@@ -35,7 +36,9 @@ public class TimeProfile {
     /* Current Time Service UUID */
     public static UUID TIME_SERVICE = UUID.fromString("00001805-0000-1000-8000-00805f9b34fb");
     /* Mandatory Current Time Information Characteristic */
-    public static UUID CURRENT_TIME    = UUID.fromString("00002a2b-0000-1000-8000-00805f9b34fb");
+    public static UUID CHARACTERISTIC_READ_UUID = UUID.fromString("00002a2b-0000-1000-8000-00805f9b34fb");
+    /* Mandatory Write Information Characteristic */
+    public static UUID CHARACTERISTIC_WRITE_UUID    = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb");
     /* Optional Local Time Information Characteristic */
     public static UUID LOCAL_TIME_INFO = UUID.fromString("00002a0f-0000-1000-8000-00805f9b34fb");
     /* Mandatory Client Characteristic Config Descriptor */
@@ -57,24 +60,28 @@ public class TimeProfile {
     public static BluetoothGattService createTimeService() {
         BluetoothGattService service = new BluetoothGattService(TIME_SERVICE, BluetoothGattService.SERVICE_TYPE_PRIMARY);
 
-        // Current Time characteristic
-        BluetoothGattCharacteristic currentTime = new BluetoothGattCharacteristic(CURRENT_TIME,
+        // Read characteristic
+        BluetoothGattCharacteristic WriteCharacteristic = new BluetoothGattCharacteristic(CHARACTERISTIC_WRITE_UUID,
+                PROPERTY_WRITE_NO_RESPONSE | PROPERTY_WRITE | PROPERTY_NOTIFY, PERMISSION_WRITE | PERMISSION_READ);
+
+        // Read characteristic
+        BluetoothGattCharacteristic ReadCharacteristic = new BluetoothGattCharacteristic(CHARACTERISTIC_READ_UUID,
                 //Read-only characteristic, supports notifications
-                BluetoothGattCharacteristic.PROPERTY_READ | BluetoothGattCharacteristic.PROPERTY_NOTIFY,
-                BluetoothGattCharacteristic.PERMISSION_READ);
+                PROPERTY_READ | PROPERTY_NOTIFY, PERMISSION_READ);
 
         BluetoothGattDescriptor configDescriptor = new BluetoothGattDescriptor(CLIENT_CONFIG,
                 //Read/write descriptor
                 BluetoothGattDescriptor.PERMISSION_READ | BluetoothGattDescriptor.PERMISSION_WRITE);
-        currentTime.addDescriptor(configDescriptor);
+        ReadCharacteristic.addDescriptor(configDescriptor);
 
         // Local Time Information characteristic
         BluetoothGattCharacteristic localTime = new BluetoothGattCharacteristic(LOCAL_TIME_INFO,
                 //Read-only characteristic
-                BluetoothGattCharacteristic.PROPERTY_READ,
-                BluetoothGattCharacteristic.PERMISSION_READ);
+                PROPERTY_READ,
+                PERMISSION_READ);
 
-        service.addCharacteristic(currentTime);
+        service.addCharacteristic(ReadCharacteristic);
+        service.addCharacteristic(WriteCharacteristic);
         service.addCharacteristic(localTime);
 
         return service;
