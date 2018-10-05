@@ -18,70 +18,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-25-48-045.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-25-48-045.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-25-58-092.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-25-58-092.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-27-25-489.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-27-25-489.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-27-29-449.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-27-29-449.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-27-56-096.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-12-16-27-56-096.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-03-28-443.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-03-28-443.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-04-40-230.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-04-40-230.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-05-09-618.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-05-09-618.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-29-46-148.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-29-46-148.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-45-27-836.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-45-27-836.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-53-59-155.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-08-53-59-155.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-30-21-511.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-30-21-511.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-41-55-772.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-41-55-772.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-41-59-462.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-41-59-462.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-42-29-584.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-10-42-29-584.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-11-57-07-961.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-04-17-11-57-07-961.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-08-50-11-618.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-08-50-11-618.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-05-59-466.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-05-59-466.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-11-32-115.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-11-32-115.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-45-08-477.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-45-08-477.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-51-26-383.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-51-26-383.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-52-07-923.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-52-07-923.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-53-09-458.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-53-09-458.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-54-25-742.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-09-54-25-742.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-10-00-43-584.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-10-00-43-584.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-11-38-05-648.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-11-38-05-648.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-11-43-40-055.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-11-43-40-055.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-11-45-43-977.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-05-03-11-45-43-977.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,8 +46,8 @@
       <file leaf-file-name="GattServerActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="248" column="69" lean-forward="false" selection-start-line="248" selection-start-column="52" selection-end-line="248" selection-end-column="69" />
+            <state relative-caret-position="204">
+              <caret line="248" column="75" lean-forward="false" selection-start-line="248" selection-start-column="54" selection-end-line="248" selection-end-column="75" />
               <folding>
                 <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
@@ -122,12 +61,24 @@
                 <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-                <element signature="e#9382#9383#0" expanded="true" />
-                <element signature="e#9451#9452#0" expanded="true" />
+                <element signature="e#9389#9390#0" expanded="true" />
+                <element signature="e#9458#9459#0" expanded="true" />
                 <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+                <element signature="e#11105#11324#0" expanded="true" />
+                <element signature="e#11323#11324#0" expanded="true" />
                 <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BluetoothGattServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-202">
+              <caret line="405" column="21" lean-forward="false" selection-start-line="405" selection-start-column="16" selection-end-line="405" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityClass.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecurityClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
@@ -155,13 +106,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeProfile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java">
+      <file leaf-file-name="CustomProfile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="43" column="59" lean-forward="false" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+            <state relative-caret-position="374">
+              <caret line="44" column="95" lean-forward="true" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
               <folding>
-                <element signature="docComment;method#createTimeService#0;class#TimeProfile#0" expanded="false" />
+                <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -204,6 +155,8 @@
       <find>mLocalTimeView</find>
       <find>updateLocalUi</find>
       <find>mTimeReceiver</find>
+      <find>close</find>
+      <find>LOCAL_TIME_INFO</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2063,8 +2016,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/Secure.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java" />
       </list>
     </option>
   </component>
@@ -2335,7 +2289,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2598684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28618422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2358,7 +2312,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2380,10 +2334,12 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9382#9383#0" expanded="true" />
-            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#11105#11324#0" expanded="true" />
+            <element signature="e#11323#11324#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2434,7 +2390,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
@@ -2467,16 +2423,18 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9382#9383#0" expanded="true" />
-            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#11105#11324#0" expanded="true" />
+            <element signature="e#11323#11324#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
@@ -2509,16 +2467,18 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9382#9383#0" expanded="true" />
-            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#11105#11324#0" expanded="true" />
+            <element signature="e#11323#11324#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
@@ -2551,16 +2511,18 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9382#9383#0" expanded="true" />
-            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#11105#11324#0" expanded="true" />
+            <element signature="e#11323#11324#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
@@ -2593,16 +2555,18 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9382#9383#0" expanded="true" />
-            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#11105#11324#0" expanded="true" />
+            <element signature="e#11323#11324#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
@@ -2635,10 +2599,12 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9382#9383#0" expanded="true" />
-            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#11105#11324#0" expanded="true" />
+            <element signature="e#11323#11324#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2739,14 +2705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -2756,14 +2714,6 @@
       </provider>
       <provider editor-type-id="android-manifest">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2754">
-          <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml">
@@ -2777,10 +2727,34 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202">
+          <caret line="405" column="21" lean-forward="false" selection-start-line="405" selection-start-column="16" selection-end-line="405" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="248" column="69" lean-forward="false" selection-start-line="248" selection-start-column="52" selection-end-line="248" selection-end-column="69" />
+        <state relative-caret-position="204">
+          <caret line="248" column="75" lean-forward="false" selection-start-line="248" selection-start-column="54" selection-end-line="248" selection-end-column="75" />
           <folding>
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
@@ -2794,30 +2768,24 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9382#9383#0" expanded="true" />
-            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#11105#11324#0" expanded="true" />
+            <element signature="e#11323#11324#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="43" column="59" lean-forward="false" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+        <state relative-caret-position="374">
+          <caret line="44" column="95" lean-forward="true" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
           <folding>
-            <element signature="docComment;method#createTimeService#0;class#TimeProfile#0" expanded="false" />
+            <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
