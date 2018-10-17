@@ -19,8 +19,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/Keys/KeyFile.key" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,13 +48,21 @@
       <file leaf-file-name="GattServerActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="248" column="75" lean-forward="false" selection-start-line="248" selection-start-column="54" selection-end-line="248" selection-end-column="75" />
+            <state relative-caret-position="159">
+              <caret line="67" column="51" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="51" />
               <folding>
+                <element signature="e#3810#3811#0" expanded="true" />
+                <element signature="e#3841#3842#0" expanded="true" />
+                <element signature="e#3886#3887#0" expanded="true" />
+                <element signature="e#3916#3917#0" expanded="true" />
                 <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+                <element signature="e#5046#5843#0" expanded="true" />
+                <element signature="e#5842#5843#0" expanded="true" />
                 <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+                <element signature="e#6020#6648#0" expanded="true" />
+                <element signature="e#6647#6648#0" expanded="true" />
                 <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -61,46 +71,20 @@
                 <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
                 <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-                <element signature="e#9389#9390#0" expanded="true" />
-                <element signature="e#9458#9459#0" expanded="true" />
                 <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-                <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-                <element signature="e#11105#11324#0" expanded="true" />
-                <element signature="e#11323#11324#0" expanded="true" />
+                <element signature="e#10426#10645#0" expanded="true" />
+                <element signature="e#10644#10645#0" expanded="true" />
                 <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BluetoothGattServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-202">
-              <caret line="405" column="21" lean-forward="false" selection-start-line="405" selection-start-column="16" selection-end-line="405" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_server.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SecurityClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="26" />
+            <state relative-caret-position="697">
+              <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -109,8 +93,8 @@
       <file leaf-file-name="CustomProfile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="44" column="95" lean-forward="true" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
+            <state relative-caret-position="216">
+              <caret line="36" column="67" lean-forward="false" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
               <folding>
                 <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
               </folding>
@@ -129,19 +113,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Encrypt</find>
-      <find>conn</find>
-      <find>TimeProfile</find>
-      <find>send</find>
-      <find>se</find>
-      <find>r.id</find>
-      <find>disco</find>
-      <find>write</find>
-      <find>mBluetoothGattServer</find>
-      <find>connect</find>
       <find>BluetoothProfile</find>
       <find>SecurityClass</find>
-      <find>text_time</find>
       <find>CURRENT_TIME</find>
       <find>BluetoothGattCharacteristic</find>
       <find>00002a2b-0000-1000-8000-00805f9b34fb</find>
@@ -149,14 +122,27 @@
       <find>00001805-0000-1000-8000-00805f9b34fb</find>
       <find>TIME_SERVICE</find>
       <find>00001110-0000-1000-8000-00805f9b34fb</find>
-      <find>timeCharacteristic</find>
       <find>CHARACTERISTIC_WRITE_UUID</find>
       <find>00000001-0000-1000-8000-00805f9b34fb</find>
       <find>mLocalTimeView</find>
       <find>updateLocalUi</find>
       <find>mTimeReceiver</find>
-      <find>close</find>
       <find>LOCAL_TIME_INFO</find>
+      <find>close</find>
+      <find>onServerConnectionState</find>
+      <find>connection</find>
+      <find>time</find>
+      <find>mService</find>
+      <find>update</find>
+      <find>connect</find>
+      <find>cancel</find>
+      <find>cance</find>
+      <find>timeCharacteristic</find>
+      <find>text_time</find>
+      <find>mtu</find>
+      <find>onConnectionStateChange</find>
+      <find>createSecurityService</find>
+      <find>mRegisteredDevices</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2014,9 +2000,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/Secure.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/TimeProfile.java" />
+        <option value="$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java" />
       </list>
@@ -2044,8 +2032,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scratches" />
       <pane id="AndroidView">
@@ -2074,11 +2060,6 @@
             <path>
               <item name="BLE_Server" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="BLE_Server" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
@@ -2095,6 +2076,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2103,6 +2086,7 @@
     <property name="sync.plugin.last.upgrade.timestamp" value="1537807013581" />
     <property name="device.picker.selection" value="ce011711826acf2202" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.1" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2288,13 +2272,12 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28618422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23026316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16717096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2305,6 +2288,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2319,13 +2303,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="3519">
+          <caret line="333" column="17" lean-forward="false" selection-start-line="333" selection-start-column="17" selection-end-line="333" selection-end-column="17" />
           <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
             <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
             <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -2334,12 +2326,103 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9389#9390#0" expanded="true" />
-            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#11105#11324#0" expanded="true" />
-            <element signature="e#11323#11324#0" expanded="true" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
+            <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12155">
+          <caret line="715" column="0" lean-forward="false" selection-start-line="715" selection-start-column="0" selection-end-line="715" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServerCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9282">
+          <caret line="546" column="34" lean-forward="false" selection-start-line="546" selection-start-column="34" selection-end-line="546" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
+            <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
+            <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+            <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="docComment;method#startServer#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2357,36 +2440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="66" />
-          <folding>
-            <marker date="1523560984281" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1523560984281" expanded="false" signature="141:179" ph="..." />
-            <marker date="1523560984281" expanded="false" signature="275:286" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="322:328" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="353:364" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="400:406" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="480:532" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="590:601" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="637:643" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="739:791" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="840:851" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="887:893" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="1004:1056" ph="{...}" />
-            <marker date="1523560984281" expanded="true" signature="1190:1242" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="1303:1314" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1350:1356" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="1421:1473" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="1506:1517" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1553:1559" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1612:1623" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1659:1665" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1720:1731" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1767:1773" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1832:1843" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1879:1885" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1941:1952" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1988:1994" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="2078:2130" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2394,7 +2447,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2411,10 +2466,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
             <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
             <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -2423,12 +2486,9 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9389#9390#0" expanded="true" />
-            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#11105#11324#0" expanded="true" />
-            <element signature="e#11323#11324#0" expanded="true" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2438,7 +2498,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2455,10 +2517,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
             <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
             <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -2467,12 +2537,9 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9389#9390#0" expanded="true" />
-            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#11105#11324#0" expanded="true" />
-            <element signature="e#11323#11324#0" expanded="true" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2482,7 +2549,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2499,10 +2568,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
             <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
             <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -2511,12 +2588,9 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9389#9390#0" expanded="true" />
-            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#11105#11324#0" expanded="true" />
-            <element signature="e#11323#11324#0" expanded="true" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2526,7 +2600,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2543,10 +2619,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
             <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
             <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -2555,12 +2639,9 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9389#9390#0" expanded="true" />
-            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#11105#11324#0" expanded="true" />
-            <element signature="e#11323#11324#0" expanded="true" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2570,7 +2651,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2587,10 +2670,18 @@
         <state relative-caret-position="5440">
           <caret line="320" column="53" lean-forward="false" selection-start-line="320" selection-start-column="53" selection-end-line="320" selection-end-column="53" />
           <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
             <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
             <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -2599,12 +2690,9 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9389#9390#0" expanded="true" />
-            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#11105#11324#0" expanded="true" />
-            <element signature="e#11323#11324#0" expanded="true" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2634,26 +2722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#616#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#616#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/content/BroadcastReceiver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -2672,74 +2740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="66" />
-          <folding>
-            <marker date="1523560984281" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1523560984281" expanded="false" signature="141:179" ph="..." />
-            <marker date="1523560984281" expanded="false" signature="275:286" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="322:328" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="353:364" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="400:406" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="480:532" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="590:601" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="637:643" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="739:791" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="840:851" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="887:893" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="1004:1056" ph="{...}" />
-            <marker date="1523560984281" expanded="true" signature="1190:1242" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="1303:1314" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1350:1356" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="1421:1473" ph="{...}" />
-            <marker date="1523560984281" expanded="false" signature="1506:1517" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1553:1559" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1612:1623" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1659:1665" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1720:1731" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1767:1773" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1832:1843" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1879:1885" ph=" }" />
-            <marker date="1523560984281" expanded="false" signature="1941:1952" ph=" { " />
-            <marker date="1523560984281" expanded="false" signature="1988:1994" ph=" }" />
-            <marker date="1523560984281" expanded="true" signature="2078:2130" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="78" lean-forward="false" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="405" column="21" lean-forward="false" selection-start-line="405" selection-start-column="16" selection-end-line="405" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2747,19 +2747,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServerCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11152">
+          <caret line="715" column="0" lean-forward="false" selection-start-line="715" selection-start-column="0" selection-end-line="715" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/bluetooth/BluetoothGattServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8874">
+          <caret line="546" column="34" lean-forward="false" selection-start-line="546" selection-start-column="34" selection-end-line="546" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_server.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="38" column="12" lean-forward="false" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/SecurityClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/GattServerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="248" column="75" lean-forward="false" selection-start-line="248" selection-start-column="54" selection-end-line="248" selection-end-column="75" />
+        <state relative-caret-position="159">
+          <caret line="67" column="51" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="51" />
           <folding>
+            <element signature="e#3810#3811#0" expanded="true" />
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
             <element signature="docComment;method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#checkBluetoothSupport#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mTimeReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#5046#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
             <element signature="docComment;field#mBluetoothReceiver#0;class#GattServerActivity#0" expanded="false" />
+            <element signature="e#6020#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
             <element signature="docComment;method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#startAdvertising#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;method#stopAdvertising#0;class#GattServerActivity#0" expanded="false" />
@@ -2768,12 +2845,9 @@
             <element signature="docComment;method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="method#stopServer#0;class#GattServerActivity#0" expanded="false" />
             <element signature="docComment;field#mAdvertiseCallback#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#9389#9390#0" expanded="true" />
-            <element signature="e#9458#9459#0" expanded="true" />
             <element signature="docComment;method#notifyRegisteredDevices#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="docComment;method#updateLocalUi#0;class#GattServerActivity#0" expanded="false" />
-            <element signature="e#11105#11324#0" expanded="true" />
-            <element signature="e#11323#11324#0" expanded="true" />
+            <element signature="e#10426#10645#0" expanded="true" />
+            <element signature="e#10644#10645#0" expanded="true" />
             <element signature="docComment;field#mGattServerCallback#0;class#GattServerActivity#0" expanded="false" />
           </folding>
         </state>
@@ -2781,8 +2855,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidthings/gattserver/CustomProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="44" column="95" lean-forward="true" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
+        <state relative-caret-position="216">
+          <caret line="36" column="67" lean-forward="false" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
           <folding>
             <element signature="docComment;method#createSecurityService#0;class#CustomProfile#0" expanded="false" />
           </folding>

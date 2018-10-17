@@ -41,6 +41,7 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
@@ -57,8 +58,8 @@ public class GattServerActivity extends Activity {
     private static final String TAG = GattServerActivity.class.getSimpleName();
 
     /* Local UI */
-    private TextView mLocalTimeView;
     private TextView mDataField_Security;
+    private Switch checkConnection;
     /* Bluetooth API */
     private BluetoothManager mBluetoothManager;
     private BluetoothGattServer mBluetoothGattServer;
@@ -71,7 +72,8 @@ public class GattServerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server);
 
-        mLocalTimeView = findViewById(R.id.text_time);
+        //mLocalTimeView = findViewById(R.id.text_time);
+        checkConnection = findViewById(R.id.switch1);
 
         // Devices with a display should not go to sleep
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -99,18 +101,11 @@ public class GattServerActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        // Register for system clock events
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_TIME_TICK);
-        filter.addAction(Intent.ACTION_TIME_CHANGED);
-        filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
-        registerReceiver(mTimeReceiver, filter);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        unregisterReceiver(mTimeReceiver);
     }
 
     @Override
@@ -168,7 +163,7 @@ public class GattServerActivity extends Activity {
             }
             long now = System.currentTimeMillis();
             notifyRegisteredDevices(now, adjustReason);
-            updateLocalUi(now);
+            //updateLocalUi(now);
         }
     };
 
@@ -245,11 +240,7 @@ public class GattServerActivity extends Activity {
             Log.w(TAG, "Unable to create GATT server");
             return;
         }
-
         mBluetoothGattServer.addService(CustomProfile.createSecurityService());
-
-        // Initialize the local UI
-        updateLocalUi(System.currentTimeMillis());
     }
 
     /**
@@ -288,7 +279,7 @@ public class GattServerActivity extends Activity {
 
         Log.i(TAG, "Sending update to " + mRegisteredDevices.size() + " subscribers");
         for (BluetoothDevice device : mRegisteredDevices) {
-            BluetoothGattCharacteristic timeCharacteristic = mBluetoothGattServer
+            BluetoothGattCharacteristic securitySendCharacteristic = mBluetoothGattServer
                     .getService(CustomProfile.SECURITY_SERVICE)
                     .getCharacteristic(CustomProfile.CHARACTERISTIC_READ_UUID);
 
@@ -296,22 +287,14 @@ public class GattServerActivity extends Activity {
                     .getService(CustomProfile.SECURITY_SERVICE)
                     .getCharacteristic(CustomProfile.CHARACTERISTIC_WRITE_UUID);
 
-            mBluetoothGattServer.notifyCharacteristicChanged(device, timeCharacteristic, false);
+            mBluetoothGattServer.notifyCharacteristicChanged(device, securitySendCharacteristic, false);
             mBluetoothGattServer.notifyCharacteristicChanged(device, securityReceiveCharacteristic, false);
         }
     }
 
     /**
-     * Update graphical UI on devices that support it with the current time.
+     * Update graphical UI on devices.
      */
-    private void updateLocalUi(long timestamp) {
-        Date date = new Date(timestamp);
-        String displayDate = DateFormat.getMediumDateFormat(this).format(date)
-                + "\n"
-                + DateFormat.getTimeFormat(this).format(date);
-        mLocalTimeView.setText(displayDate);
-    }
-
     private void updateLocalUi(final String value) {
         runOnUiThread(new Runnable() {
             @Override
@@ -332,11 +315,27 @@ public class GattServerActivity extends Activity {
         public void onConnectionStateChange(BluetoothDevice device, int status, int newState) {
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 Log.i(TAG, "BluetoothDevice CONNECTED: " + device);
+                try {
+                    Log.i(TAG, "Time wait: 500ms");
+                    Thread.currentThread().sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(!checkConnection.isChecked()){
+                    mBluetoothGattServer.cancelConnection(device);
+                    Log.i(TAG, "BluetoothDevice FORCE DISCONNECTED: " + device);
+                }
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 Log.i(TAG, "BluetoothDevice DISCONNECTED: " + device);
                 //Remove device from any active subscriptions
                 mRegisteredDevices.remove(device);
             }
+        }
+
+        @Override
+        public void onMtuChanged(BluetoothDevice device, int mtu) {
+            Log.i(TAG, "MTU changed to: " + mtu + " bits");
+            super.onMtuChanged(device, mtu);
         }
 
         @Override
@@ -362,6 +361,8 @@ public class GattServerActivity extends Activity {
                     updateLocalUi(text);
                 }
             }
+
+            mBluetoothGattServer.cancelConnection(device);
         }
 
         @Override

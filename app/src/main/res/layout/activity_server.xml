@@ -20,19 +20,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="56dp"
-        tools:text="01/01/1970\n12:00"/>
-
     <EditText
         android:id="@+id/plain_text_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:inputType="text"
         android:visibility="visible" />
 
@@ -40,7 +32,20 @@
         android:id="@+id/security_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:text="Security Data (No Data)" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="80dp"
+        android:checked="true"
+        android:switchMinWidth="56dp"
+        android:text="Accept Connection:"
+        android:textOff="OFF"
+        android:textOn="ON" />
 
 </FrameLayout>
