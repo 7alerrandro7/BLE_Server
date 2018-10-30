@@ -20,8 +20,6 @@ import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 
-import java.util.Calendar;
-import java.text.SimpleDateFormat;
 import java.util.UUID;
 
 import static android.bluetooth.BluetoothGattCharacteristic.*;
@@ -38,7 +36,7 @@ public class CustomProfile {
     /* Mandatory Read Information Characteristic */
     public static UUID CHARACTERISTIC_READ_UUID = UUID.fromString("00002a2b-0000-1000-8000-00805f9b34fb");
     /* Mandatory Write Information Characteristic */
-    public static UUID CHARACTERISTIC_WRITE_UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb");
+    public static UUID AUTH_WRITE_UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb");
     /* Mandatory Client Characteristic Config Descriptor */
     public static UUID CLIENT_CONFIG = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
 
@@ -55,8 +53,8 @@ public class CustomProfile {
         BluetoothGattService service = new BluetoothGattService(SECURITY_SERVICE, BluetoothGattService.SERVICE_TYPE_PRIMARY);
 
         // Read characteristic
-        BluetoothGattCharacteristic WriteCharacteristic = new BluetoothGattCharacteristic(CHARACTERISTIC_WRITE_UUID,
-                WRITE_TYPE_DEFAULT | PROPERTY_WRITE_NO_RESPONSE | PROPERTY_WRITE, PERMISSION_WRITE | PERMISSION_READ);
+        BluetoothGattCharacteristic AuthWriteCharacteristic = new BluetoothGattCharacteristic(AUTH_WRITE_UUID,
+                WRITE_TYPE_DEFAULT | PROPERTY_WRITE, PERMISSION_WRITE | PERMISSION_READ);
 
         // Read characteristic
         BluetoothGattCharacteristic ReadCharacteristic = new BluetoothGattCharacteristic(CHARACTERISTIC_READ_UUID,
@@ -69,7 +67,7 @@ public class CustomProfile {
         ReadCharacteristic.addDescriptor(configDescriptor);
 
         service.addCharacteristic(ReadCharacteristic);
-        service.addCharacteristic(WriteCharacteristic);
+        service.addCharacteristic(AuthWriteCharacteristic);
 
         return service;
     }

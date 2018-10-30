@@ -48,4 +48,12 @@
         android:textOff="OFF"
         android:textOn="ON" />
 
+    <TextView
+        android:id="@+id/Rdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="120dp"
+        android:text="TextView" />
+
 </FrameLayout>

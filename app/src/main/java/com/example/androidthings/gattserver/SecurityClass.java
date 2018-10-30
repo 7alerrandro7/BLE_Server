@@ -2,7 +2,11 @@ package com.example.androidthings.gattserver;
 
 import android.os.Environment;
 import android.util.Log;
+
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
@@ -17,7 +21,8 @@ public class SecurityClass {
 
     public static String Decrypt(byte[] text) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
 
-        Log.d(TAG, "Bytes = " + text);
+
+        Log.d(TAG, "Bytes = " + text.toString());
 
         byte [] key = "AAAAA".getBytes("ASCII");
 
@@ -28,6 +33,27 @@ public class SecurityClass {
         byte [] cipherText = rc4.update(text);
 
         return(new String(cipherText, "ASCII"));
+
+    }
+
+    public static void Decrypt(byte[] text, SecretKeySpec Ksession){
+
+        Cipher rc4 = null;
+        try {
+            rc4 = Cipher.getInstance("RC4");
+            rc4.init(Cipher.DECRYPT_MODE, Ksession);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        }
+
+        byte [] cipherText = rc4.update(text);
+        Log.d(TAG, "Texto Limpo: " + cipherText);
+
+        return;
 
     }
 
@@ -57,6 +83,13 @@ public class SecurityClass {
 
         return(cipherText);
 
+    }
+
+    public static Object convertFromBytes(byte[] bytes) throws IOException, ClassNotFoundException {
+        try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+             ObjectInput in = new ObjectInputStream(bis)) {
+            return in.readObject();
+        }
     }
 
 }
