@@ -8,12 +8,13 @@ public class ConnectedHub {
 
     public BluetoothDevice hub;
     public int STATE;
-    public byte[] pack = new byte[80];
+    public byte[] pack = new byte[60];
     int lastPackSize;
     boolean Authenticated;
     byte[] OTP;
+    byte[] timestamp;
+    byte[] AcceptedMessage = null;
     SecretKeySpec Ksession;
-    public byte[] PackageK;
 
     public ConnectedHub(BluetoothDevice hub, int lastPackSize) {
         this.hub = hub;
@@ -32,5 +33,13 @@ public class ConnectedHub {
 
     public void setOTP(byte[] OTP) {
         this.OTP = OTP;
+    }
+
+    public void setTimestamp(byte[] timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public void setAcceptedMessage(byte[] acceptedMessage) {
+        AcceptedMessage = acceptedMessage;
     }
 }

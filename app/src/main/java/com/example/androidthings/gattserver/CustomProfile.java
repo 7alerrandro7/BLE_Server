@@ -33,9 +33,11 @@ public class CustomProfile {
 
     /* Current Security Service UUID */
     public static UUID SECURITY_SERVICE = UUID.fromString("00001805-0000-1000-8000-00805f9b34fb");
-    /* Mandatory Read Information Characteristic */
-    public static UUID CHARACTERISTIC_READ_UUID = UUID.fromString("00002a2b-0000-1000-8000-00805f9b34fb");
-    /* Mandatory Write Information Characteristic */
+    /* Mandatory Get Hello Accepted Msg Read Information Characteristic */
+    public static UUID GET_HELLO_UUID = UUID.fromString("00002a2b-0000-1000-8000-00405f6b34cb");
+    /* Mandatory Get Mac Address Read Information Characteristic */
+    public static UUID GET_MAC_UUID = UUID.fromString("00002a2b-0000-1000-8000-00805f9b34fb");
+    /* Mandatory Auth Write Information Characteristic */
     public static UUID AUTH_WRITE_UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb");
     /* Mandatory Client Characteristic Config Descriptor */
     public static UUID CLIENT_CONFIG = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
@@ -54,19 +56,25 @@ public class CustomProfile {
 
         // Read characteristic
         BluetoothGattCharacteristic AuthWriteCharacteristic = new BluetoothGattCharacteristic(AUTH_WRITE_UUID,
-                WRITE_TYPE_DEFAULT | PROPERTY_WRITE, PERMISSION_WRITE | PERMISSION_READ);
+                WRITE_TYPE_DEFAULT | PROPERTY_WRITE | PROPERTY_READ, PERMISSION_WRITE | PERMISSION_READ);
 
         // Read characteristic
-        BluetoothGattCharacteristic ReadCharacteristic = new BluetoothGattCharacteristic(CHARACTERISTIC_READ_UUID,
+        BluetoothGattCharacteristic GetMacCharacteristic = new BluetoothGattCharacteristic(GET_MAC_UUID,
                 //Read-only characteristic, supports notifications
-                PROPERTY_READ | PROPERTY_NOTIFY, PERMISSION_READ);
+                PROPERTY_READ, PERMISSION_READ);
+
+        // Read characteristic
+        BluetoothGattCharacteristic GetHelloCharacteristic = new BluetoothGattCharacteristic(GET_HELLO_UUID,
+                //Read-only characteristic, supports notifications
+                PROPERTY_READ, PERMISSION_READ);
 
         BluetoothGattDescriptor configDescriptor = new BluetoothGattDescriptor(CLIENT_CONFIG,
                 //Read/write descriptor
                 BluetoothGattDescriptor.PERMISSION_READ | BluetoothGattDescriptor.PERMISSION_WRITE);
-        ReadCharacteristic.addDescriptor(configDescriptor);
+        GetMacCharacteristic.addDescriptor(configDescriptor);
 
-        service.addCharacteristic(ReadCharacteristic);
+        service.addCharacteristic(GetHelloCharacteristic);
+        service.addCharacteristic(GetMacCharacteristic);
         service.addCharacteristic(AuthWriteCharacteristic);
 
         return service;
