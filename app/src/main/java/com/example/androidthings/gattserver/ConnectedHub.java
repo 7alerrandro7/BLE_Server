@@ -6,15 +6,16 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class ConnectedHub {
 
-    public BluetoothDevice hub;
-    public int STATE;
-    public byte[] pack = new byte[60];
-    int lastPackSize;
-    boolean Authenticated;
-    byte[] OTP;
-    byte[] timestamp;
-    byte[] AcceptedMessage = null;
-    SecretKeySpec Ksession;
+    private BluetoothDevice hub;
+    private String hub_fixID;
+    private int STATE;
+    private byte[] pack = new byte[60];
+    private int lastPackSize;
+    private boolean Authenticated;
+    private byte[] OTP;
+    private byte[] timestamp;
+    private byte[] AcceptedMessage = null;
+    private SecretKeySpec Ksession;
 
     public ConnectedHub(BluetoothDevice hub, int lastPackSize) {
         this.hub = hub;
@@ -41,5 +42,65 @@ public class ConnectedHub {
 
     public void setAcceptedMessage(byte[] acceptedMessage) {
         AcceptedMessage = acceptedMessage;
+    }
+
+    public BluetoothDevice getHub() {
+        return hub;
+    }
+
+    public void setHub(BluetoothDevice hub) {
+        this.hub = hub;
+    }
+
+    public int getSTATE() {
+        return STATE;
+    }
+
+    public void setSTATE(int STATE) {
+        this.STATE = STATE;
+    }
+
+    public byte[] getPack() {
+        return pack;
+    }
+
+    public void setPack(byte[] pack) {
+        this.pack = pack;
+    }
+
+    public int getLastPackSize() {
+        return lastPackSize;
+    }
+
+    public void setLastPackSize(int lastPackSize) {
+        this.lastPackSize = lastPackSize;
+    }
+
+    public boolean isAuthenticated() {
+        return Authenticated;
+    }
+
+    public byte[] getOTP() {
+        return OTP;
+    }
+
+    public byte[] getTimestamp() {
+        return timestamp;
+    }
+
+    public byte[] getAcceptedMessage() {
+        return AcceptedMessage;
+    }
+
+    public SecretKeySpec getKsession() {
+        return Ksession;
+    }
+
+    public String getHub_fixID() {
+        return hub_fixID;
+    }
+
+    public void setHub_fixID(String hub_fixID) {
+        this.hub_fixID = hub_fixID;
     }
 }

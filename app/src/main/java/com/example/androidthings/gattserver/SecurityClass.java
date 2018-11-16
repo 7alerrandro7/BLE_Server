@@ -85,6 +85,31 @@ public class SecurityClass {
 
     }
 
+    public static byte[] Encrypt(String text, SecretKeySpec Ksession) throws UnsupportedEncodingException, InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException {
+
+        byte[] plainText = text.getBytes("ASCII");
+
+        Log.i(TAG, text);
+
+        Cipher rc4 = Cipher.getInstance("RC4");
+        rc4.init(Cipher.ENCRYPT_MODE, Ksession);
+
+        byte [] cipherText = rc4.update(plainText);
+
+        // converte o cipherText para hexadecimal
+        StringBuffer buf = new StringBuffer();
+        for(int i = 0; i < cipherText.length; i++) {
+            String hex = Integer.toHexString(0x0100 + (cipherText[i] & 0x00FF)).substring(1);
+            buf.append((hex.length() < 2 ? "0" : "") + hex);
+        }
+
+        // imprime o ciphertext em hexadecimal
+        Log.i(TAG, buf.toString());
+
+        return(cipherText);
+
+    }
+
     public static Object convertFromBytes(byte[] bytes) throws IOException, ClassNotFoundException {
         try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
              ObjectInput in = new ObjectInputStream(bis)) {

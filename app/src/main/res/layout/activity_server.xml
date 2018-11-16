@@ -20,40 +20,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/plain_text_input"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:inputType="text"
-        android:visibility="visible" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/security_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:text="Security Data (No Data)" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="80dp"
-        android:checked="true"
-        android:switchMinWidth="56dp"
-        android:text="Accept Connection:"
-        android:textOff="OFF"
-        android:textOn="ON" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="169dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dado sensor:" />
 
-    <TextView
-        android:id="@+id/Rdata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="120dp"
-        android:text="TextView" />
+            <EditText
+                android:id="@+id/plain_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/security_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:text="Security Data (No Data)" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Rdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Último Cliente" />
+
+        <ListView
+            android:id="@+id/usrAuth"
+            android:layout_width="match_parent"
+            android:layout_height="185dp" />
+    </LinearLayout>
 
 </FrameLayout>

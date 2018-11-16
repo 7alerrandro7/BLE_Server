@@ -39,7 +39,9 @@ import android.os.Bundle;
 import android.os.ParcelUuid;
 import android.util.Log;
 import android.view.WindowManager;
-import android.widget.Switch;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
@@ -64,14 +66,16 @@ public class GattServerActivity extends Activity {
     /* Local UI */
     private TextView mDataField_Security;
     private TextView mDataField;
-    private Switch checkConnection;
+    private ListView mList;
     /* Bluetooth API */
     private BluetoothManager mBluetoothManager;
     private BluetoothGattServer mBluetoothGattServer;
     private BluetoothLeAdvertiser mBluetoothLeAdvertiser;
     /* Collection of notification subscribers */
     private Set<BluetoothDevice> mRegisteredDevices = new HashSet<>();
-    private ArrayList<ConnectedHub> ConnectedHub = new ArrayList<>();
+    private ArrayList<ConnectedHub> ConnectedHubList = new ArrayList<>();
+
+    private ArrayAdapter arrayAdapter;
 
     private String obj_id = getBluetoothMacAddress();
 
@@ -102,7 +106,9 @@ public class GattServerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server);
 
-        checkConnection = findViewById(R.id.switch1);
+        mList = findViewById(R.id.usrAuth);
+        arrayAdapter = new ConnectedHubAdapter(this, ConnectedHubList);
+        mList.setAdapter(arrayAdapter);
 
         // Devices with a display should not go to sleep
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -169,32 +175,6 @@ public class GattServerActivity extends Activity {
 
         return true;
     }
-
-    /**
-     * Listens for system time changes and triggers a notification to
-     * Bluetooth subscribers.
-     */
-    private BroadcastReceiver mTimeReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            byte adjustReason;
-            switch (intent.getAction()) {
-                case Intent.ACTION_TIME_CHANGED:
-                    adjustReason = CustomProfile.ADJUST_MANUAL;
-                    break;
-                case Intent.ACTION_TIMEZONE_CHANGED:
-                    adjustReason = CustomProfile.ADJUST_TIMEZONE;
-                    break;
-                default:
-                case Intent.ACTION_TIME_TICK:
-                    adjustReason = CustomProfile.ADJUST_NONE;
-                    break;
-            }
-            long now = System.currentTimeMillis();
-            notifyRegisteredDevices(now, adjustReason);
-            //updateLocalUi(now);
-        }
-    };
 
     /**
      * Listens for Bluetooth adapter events to enable/disable
@@ -343,10 +323,19 @@ public class GattServerActivity extends Activity {
         });
     }
 
+    private void updateList() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
     private boolean RemoveConnectedHub(BluetoothDevice device){
-        for(int i=0; i<ConnectedHub.size(); i++){
-            if(ConnectedHub.get(i).hub.equals(device)){
-                ConnectedHub.remove(ConnectedHub.get(i));
+        for(int i = 0; i< ConnectedHubList.size(); i++){
+            if(ConnectedHubList.get(i).getHub().equals(device)){
+                ConnectedHubList.remove(ConnectedHubList.get(i));
                 return true;
             }
         }
@@ -368,6 +357,10 @@ public class GattServerActivity extends Activity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
+        Log.d(TAG, "Hub_ID:" + hub_id);
+        Log.d(TAG, "HelloMessage:" + HM);
+        Log.d(TAG, "PACK:" + pack);
 
         try {
             Mac mac = Mac.getInstance("hmacMD5");
@@ -441,11 +434,11 @@ public class GattServerActivity extends Activity {
     }
 
     private byte[] CheckAuthentication(ConnectedHub Hub){
-        print_hex(Hub.pack);
-        byte[] PackageK = Arrays.copyOfRange(Hub.pack, 0, 24);
+        print_hex(Hub.getPack());
+        byte[] PackageK = Arrays.copyOfRange(Hub.getPack(), 0, 24);
         Log.d(TAG, "PackageK: ");
         print_hex(PackageK);
-        byte[] Package_K_With_HMAC = Arrays.copyOfRange(Hub.pack, 24, 40);
+        byte[] Package_K_With_HMAC = Arrays.copyOfRange(Hub.getPack(), 24, 40);
         Log.d(TAG, "PackageK_HMAC: ");
         print_hex(Package_K_With_HMAC);
         boolean CheckSign = CheckSignForPackage(PackageK, Package_K_With_HMAC, Kauth_sddl);
@@ -530,20 +523,14 @@ public class GattServerActivity extends Activity {
             try {
                 Field mServiceField = bluetoothAdapter.getClass().getDeclaredField("mService");
                 mServiceField.setAccessible(true);
-
                 Object btManagerService = mServiceField.get(bluetoothAdapter);
-
                 if (btManagerService != null) {
                     bluetoothMacAddress = (String) btManagerService.getClass().getMethod("getAddress").invoke(btManagerService);
                 }
             } catch (NoSuchFieldException e) {
-
             } catch (NoSuchMethodException e) {
-
             } catch (IllegalAccessException e) {
-
             } catch (InvocationTargetException e) {
-
             }
         } else {
             bluetoothMacAddress = bluetoothAdapter.getAddress();
@@ -556,74 +543,65 @@ public class GattServerActivity extends Activity {
      * Callback to handle incoming requests to the GATT server.
      * All read/write requests for characteristics and descriptors are handled here.
      */
-    private BluetoothGattServerCallback mGattServerCallback = new BluetoothGattServerCallback() {
+    private BluetoothGattServerCallback mGattServerCallback = new BluetoothGattServerCallback(){
+
+        public void onCharacteristicWriteRequestSecurity(BluetoothDevice device, int requestId, BluetoothGattCharacteristic characteristic,
+                                                 boolean preparedWrite, boolean responseNeeded, int offset, byte[] value) {
+
+        }
 
         @Override
         public void onConnectionStateChange(BluetoothDevice device, int status, int newState) {
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 Log.i(TAG, "BluetoothDevice CONNECTED: " + device);
-                ConnectedHub.add(new ConnectedHub(device, 0));
+                ConnectedHubList.add(new ConnectedHub(device, 0));
+
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 Log.i(TAG, "BluetoothDevice DISCONNECTED: " + device);
                 //Remove device from any active subscriptions
                 RemoveConnectedHub(device);
                 mRegisteredDevices.remove(device);
+                updateList();
             }
-        }
-
-        @Override
-        public void onMtuChanged(BluetoothDevice device, int mtu) {
-            Log.i(TAG, "MTU changed to: " + mtu + " bits");
-            super.onMtuChanged(device, mtu);
         }
 
         @Override
         public void onCharacteristicWriteRequest(BluetoothDevice device, int requestId, BluetoothGattCharacteristic characteristic,
                                                  boolean preparedWrite, boolean responseNeeded, int offset, byte[] value) {
-            if (CustomProfile.AUTH_WRITE_UUID.equals(characteristic.getUuid())) {
-                String text = "";
-                if (value != null) {
-
-                    try {
-                        text = new String(value, "ASCII");
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
-
-                    updateLocalUi2(Integer.toString(value.length));
-
-                    for(int i = 0; i < ConnectedHub.size(); i++){
-                        if(ConnectedHub.get(i).hub.equals(device) && ConnectedHub.get(i).Authenticated == false){
-
-                            switch (ConnectedHub.get(i).STATE) {
+            if (value != null) {
+                if (CustomProfile.AUTH_WRITE_UUID.equals(characteristic.getUuid())) {
+                    for (int i = 0; i < ConnectedHubList.size(); i++) {
+                        if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == false) {
+                            int lastPackSize = ConnectedHubList.get(i).getLastPackSize();
+                            switch (ConnectedHubList.get(i).getSTATE()) {
                                 case 1:
                                     Log.d(TAG, "STATE 1");
-                                    System.arraycopy(value, 0, ConnectedHub.get(i).pack, ConnectedHub.get(i).lastPackSize, value.length);
-                                    ConnectedHub.get(i).lastPackSize += value.length;
-                                    ConnectedHub.get(i).STATE = 2;
+                                    System.arraycopy(value, 0, ConnectedHubList.get(i).getPack(), ConnectedHubList.get(i).getLastPackSize(), value.length);
+                                    ConnectedHubList.get(i).setLastPackSize(lastPackSize + value.length);
+                                    ConnectedHubList.get(i).setSTATE(2);
                                     mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, "ok".getBytes());
                                     break;
                                 case 2:
                                     Log.d(TAG, "STATE 2");
-                                    System.arraycopy(value, 0, ConnectedHub.get(i).pack, ConnectedHub.get(i).lastPackSize, value.length);
-                                    ConnectedHub.get(i).lastPackSize += value.length;
-                                    ConnectedHub.get(i).STATE = 3;
+                                    System.arraycopy(value, 0, ConnectedHubList.get(i).getPack(), ConnectedHubList.get(i).getLastPackSize(), value.length);
+                                    ConnectedHubList.get(i).setLastPackSize(lastPackSize + value.length);
+                                    ConnectedHubList.get(i).setSTATE(3);
                                     mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, "ok".getBytes());
                                     break;
                                 case 3:
                                     Log.d(TAG, "STATE 3");
-                                    System.arraycopy(value, 0, ConnectedHub.get(i).pack, ConnectedHub.get(i).lastPackSize, value.length);
-                                    ConnectedHub.get(i).lastPackSize += value.length;
-                                    ConnectedHub.get(i).STATE = 4;
-                                    byte[] PackageK = CheckAuthentication(ConnectedHub.get(i));
-                                    if(PackageK != null){
-                                        ConnectedHub.get(i).setAuthenticated(true);
+                                    System.arraycopy(value, 0, ConnectedHubList.get(i).getPack(), ConnectedHubList.get(i).getLastPackSize(), value.length);
+                                    ConnectedHubList.get(i).setLastPackSize(lastPackSize + value.length);
+                                    ConnectedHubList.get(i).setSTATE(4);
+                                    byte[] PackageK = CheckAuthentication(ConnectedHubList.get(i));
+                                    if (PackageK != null) {
+                                        ConnectedHubList.get(i).setAuthenticated(true);
 
                                         /* Getting PackageK Decrypted */
                                         byte[] PackageK_Decrypted = Decrypt(PackageK, Kcipher_obj);
 
-                                        /* Getting the hub_if and obj_id */
-                                        String hub_id = device.getAddress();
+                                        /* Getting the hub_id and obj_id */
+                                        String hub_id = ConnectedHubList.get(i).getHub_fixID();
 
                                         /* Creating OTP */
                                         String OTPChallenge = null;
@@ -635,69 +613,77 @@ public class GattServerActivity extends Activity {
                                         byte[] OTP = generateOTP(obj_id, hub_id, OTPChallenge, Kauth_obj);
 
                                         /* Getting the HelloMessage and HelloMessage_HMAC */
-                                        byte[] HelloMessage = Arrays.copyOfRange(ConnectedHub.get(i).pack, 0, 44);
-                                        byte[] HelloMessage_HMAC = Arrays.copyOfRange(ConnectedHub.get(i).pack, 44, 60);
+                                        byte[] HelloMessage = Arrays.copyOfRange(ConnectedHubList.get(i).getPack(), 0, 44);
+                                        byte[] HelloMessage_HMAC = Arrays.copyOfRange(ConnectedHubList.get(i).getPack(), 44, 60);
 
-                                        if(CheckSignForHelloMessage(hub_id, OTP, HelloMessage, HelloMessage_HMAC)){
+                                        if (CheckSignForHelloMessage(hub_id, OTP, HelloMessage, HelloMessage_HMAC)) {
                                             Log.d(TAG, "Mensagem assinada corretamente!");
 
                                             /* Setting the Session Key on the Database */
                                             byte[] Key_session = Arrays.copyOfRange(PackageK_Decrypted, 13, PackageK_Decrypted.length);
                                             SecretKeySpec Ksession = new SecretKeySpec(Key_session, 0, Key_session.length, "RC4");
-                                            ConnectedHub.get(i).setKsession(Ksession);
+                                            ConnectedHubList.get(i).setKsession(Ksession);
 
                                             /* Setting OTPChallenge on the Database */
-                                            ConnectedHub.get(i).setOTP(OTP);
+                                            ConnectedHubList.get(i).setOTP(OTP);
 
                                             /* Setting TimeStamp on the Database */
-                                            byte[] timestamp = Arrays.copyOfRange(ConnectedHub.get(i).pack, 40, 44);
-                                            ConnectedHub.get(i).setTimestamp(timestamp);
+                                            byte[] timestamp = Arrays.copyOfRange(ConnectedHubList.get(i).getPack(), 40, 44);
+                                            ConnectedHubList.get(i).setTimestamp(timestamp);
 
-                                            ConnectedHub.get(i).setAcceptedMessage(signHelloAcceptedMessage(hub_id, OTP, timestamp));
+                                            ConnectedHubList.get(i).setAcceptedMessage(signHelloAcceptedMessage(hub_id, OTP, timestamp));
 
                                             mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, "ok".getBytes());
 
-                                        }else{
+                                            updateLocalUi2("Último cliente " + device.getName() + " autenticado com sucesso!");
+
+                                            updateList();
+
+                                        } else {
                                             Log.d(TAG, "Falha na Verificação da Assinatura");
                                         }
                                         updateLocalUi(HelloMessage_HMAC.toString());
                                     }
                             }
-                            break;
+                            return;
                         }
                     }
 
                     //Log.i(TAG, responseNeeded + " VALOOORRRR:" + text);
                     //updateLocalUi(text);
                 }
+                if (CustomProfile.SET_MAC_UUID.equals(characteristic.getUuid())) {
+                    for (int i = 0; i < ConnectedHubList.size(); i++) {
+                        if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == false) {
+                            try {
+                                Log.d(TAG, "Receving MacAddress");
+                                ConnectedHubList.get(i).setHub_fixID(new String(value, "ASCII"));
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
+                            mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, "ok".getBytes());
+                            Log.d(TAG, "REsponse!!!!!");
+                            return;
+                        }
+                    }
+                }
+                for (int i = 0; i < ConnectedHubList.size(); i++) {
+                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == true) {
+                        // HUB trying to write on SmartObject
+                        return;
+                    }
+                }
+                onCharacteristicWriteRequestSecurity(device, requestId, characteristic, preparedWrite, responseNeeded, offset, value);
+            } else {
+                Log.w(TAG, "Null value!");
+                return;
             }
         }
 
         @Override
         public void onCharacteristicReadRequest(BluetoothDevice device, int requestId, int offset, BluetoothGattCharacteristic characteristic) {
             if (CustomProfile.GET_MAC_UUID.equals(characteristic.getUuid())) {
-                Log.i(TAG, "Read value of server");
-
-                /*
-                EditText text_field;
-                text_field = findViewById(R.id.plain_text_input);
-                String text = text_field.getText().toString();
-
-                byte [] text_in_bytes = new byte[0];
-
-
-                try {
-                    text_in_bytes = SecurityClass.Encrypt(text);
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                } catch (InvalidKeyException e) {
-                    e.printStackTrace();
-                } catch (NoSuchPaddingException e) {
-                    e.printStackTrace();
-                } catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                }
-                */
+                Log.i(TAG, "Read MAC Address of IoT");
 
                 byte[] MacAddress = getBluetoothMacAddress().getBytes();
 
@@ -705,10 +691,31 @@ public class GattServerActivity extends Activity {
                 mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, MacAddress);
 
             } else if(CustomProfile.GET_HELLO_UUID.equals(characteristic.getUuid())){
-                Log.d(TAG, "Entrou!");
-                for(int i = 0; i < ConnectedHub.size(); i++) {
-                    if (ConnectedHub.get(i).hub.equals(device) && ConnectedHub.get(i).Authenticated == true) {
-                        mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, ConnectedHub.get(i).AcceptedMessage);
+                for(int i = 0; i < ConnectedHubList.size(); i++) {
+                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == true) {
+                        mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, ConnectedHubList.get(i).getAcceptedMessage());
+                    }
+                }
+            } else if(CustomProfile.READ_UUID.equals(characteristic.getUuid())){
+                for(int i = 0; i < ConnectedHubList.size(); i++) {
+                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == true) {
+                        EditText text_field;
+                        text_field = findViewById(R.id.plain_text_input);
+                        String text = text_field.getText().toString();
+
+                        byte [] text_in_bytes = new byte[0];
+                        try {
+                            text_in_bytes = SecurityClass.Encrypt(text, ConnectedHubList.get(i).getKsession());
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        } catch (InvalidKeyException e) {
+                            e.printStackTrace();
+                        } catch (NoSuchPaddingException e) {
+                            e.printStackTrace();
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                        }
+                        mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, text_in_bytes);
                     }
                 }
             } else {
