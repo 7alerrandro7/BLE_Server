@@ -1,15 +1,10 @@
 package com.example.androidthings.gattserver;
 
-import android.os.Environment;
+
 import android.util.Log;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.*;
-import java.security.spec.InvalidKeySpecException;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
@@ -109,12 +104,4 @@ public class SecurityClass {
         return(cipherText);
 
     }
-
-    public static Object convertFromBytes(byte[] bytes) throws IOException, ClassNotFoundException {
-        try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
-             ObjectInput in = new ObjectInputStream(bis)) {
-            return in.readObject();
-        }
-    }
-
 }

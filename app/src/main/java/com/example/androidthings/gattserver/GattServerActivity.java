@@ -654,7 +654,7 @@ public class GattServerActivity extends Activity {
                 }
                 if (CustomProfile.SET_MAC_UUID.equals(characteristic.getUuid())) {
                     for (int i = 0; i < ConnectedHubList.size(); i++) {
-                        if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == false) {
+                        if (ConnectedHubList.get(i).getHub().equals(device) && !ConnectedHubList.get(i).isAuthenticated()) {
                             try {
                                 Log.d(TAG, "Receving MacAddress");
                                 ConnectedHubList.get(i).setHub_fixID(new String(value, "ASCII"));
