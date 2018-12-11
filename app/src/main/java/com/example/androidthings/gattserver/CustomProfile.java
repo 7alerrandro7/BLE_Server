@@ -41,10 +41,10 @@ public class CustomProfile {
     public static UUID SET_MAC_UUID = UUID.fromString("00000001-0000-1000-8000-00605f9b34fb");
     /* Mandatory Auth Write Information Characteristic */
     public static UUID AUTH_WRITE_UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb");
-    /* Mandatory Client Characteristic Config Descriptor */
-    public static UUID CLIENT_CONFIG = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
-    /* Mandatory Read Information Characteristic */
+    /* Mandatory Custom Read Information Characteristic */
     public static UUID READ_UUID = UUID.fromString("00002a2b-0000-1000-8000-00105f9b34fb");
+    /* Mandatory Custom Write Information Characteristic */
+    public static UUID WRITE_UUID = UUID.fromString("00000001-0000-1000-8000-00705f9b34fb");
 
     /**
      * Return a configured {@link BluetoothGattService} instance for the
@@ -53,33 +53,32 @@ public class CustomProfile {
     public static BluetoothGattService createSecurityService() {
         BluetoothGattService service = new BluetoothGattService(SECURITY_SERVICE, BluetoothGattService.SERVICE_TYPE_PRIMARY);
 
-        // Write characteristic
+        // Receive auth information from HUB characteristic
         BluetoothGattCharacteristic AuthWriteCharacteristic = new BluetoothGattCharacteristic(AUTH_WRITE_UUID,
                 WRITE_TYPE_DEFAULT | PROPERTY_WRITE, PERMISSION_WRITE);
 
-        // Write characteristic
+        // Receive MAC from HUB characteristic
         BluetoothGattCharacteristic SetMacCharacteristic = new BluetoothGattCharacteristic(SET_MAC_UUID,
                 WRITE_TYPE_DEFAULT | PROPERTY_WRITE, PERMISSION_WRITE);
 
-        // Read characteristic
+        // Send MAC to HUB characteristic
         BluetoothGattCharacteristic GetMacCharacteristic = new BluetoothGattCharacteristic(GET_MAC_UUID,
                 //Read-only characteristic
                 PROPERTY_READ, PERMISSION_READ);
 
-        // Read characteristic
+        // Hello Message characteristic
         BluetoothGattCharacteristic GetHelloCharacteristic = new BluetoothGattCharacteristic(GET_HELLO_UUID,
                 //Read-only characteristic
                 PROPERTY_READ, PERMISSION_READ);
 
-        // Read characteristic
+        // Custom Read characteristic
         BluetoothGattCharacteristic ReadCharacteristic = new BluetoothGattCharacteristic(READ_UUID,
                 //Read-only characteristic
                 PROPERTY_READ, PERMISSION_READ);
 
-        BluetoothGattDescriptor configDescriptor = new BluetoothGattDescriptor(CLIENT_CONFIG,
-                //Read/write descriptor
-                BluetoothGattDescriptor.PERMISSION_READ | BluetoothGattDescriptor.PERMISSION_WRITE);
-        GetMacCharacteristic.addDescriptor(configDescriptor);
+        // Receive MAC from HUB characteristic
+        BluetoothGattCharacteristic WriteCharacteristic = new BluetoothGattCharacteristic(WRITE_UUID,
+                WRITE_TYPE_DEFAULT | PROPERTY_WRITE, PERMISSION_WRITE);
 
         service.addCharacteristic(GetHelloCharacteristic);
         service.addCharacteristic(GetMacCharacteristic);
@@ -87,6 +86,7 @@ public class CustomProfile {
         service.addCharacteristic(AuthWriteCharacteristic);
 
         service.addCharacteristic(ReadCharacteristic);
+        service.addCharacteristic(WriteCharacteristic);
 
         return service;
     }

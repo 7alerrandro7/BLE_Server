@@ -31,7 +31,7 @@ public class SecurityClass {
 
     }
 
-    public static void Decrypt(byte[] text, SecretKeySpec Ksession){
+    public static byte[] Decrypt(byte[] text, SecretKeySpec Ksession){
 
         Cipher rc4 = null;
         try {
@@ -45,11 +45,10 @@ public class SecurityClass {
             e.printStackTrace();
         }
 
-        byte [] cipherText = rc4.update(text);
+        byte[] cipherText = rc4.update(text);
         Log.d(TAG, "Texto Limpo: " + cipherText);
 
-        return;
-
+        return(cipherText);
     }
 
     public static byte[] Encrypt(String text) throws UnsupportedEncodingException, InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException {
