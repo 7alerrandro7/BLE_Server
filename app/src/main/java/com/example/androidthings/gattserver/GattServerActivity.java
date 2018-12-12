@@ -548,6 +548,16 @@ public class GattServerActivity extends Activity {
         public void onCharacteristicWriteRequestSecurity(BluetoothDevice device, int requestId, BluetoothGattCharacteristic characteristic,
                                                  boolean preparedWrite, boolean responseNeeded, int offset, byte[] value) {
             if (CustomProfile.WRITE_UUID.equals(characteristic.getUuid())) {
+                for (int i = 0; i < ConnectedHubList.size(); i++) {
+                    if (ConnectedHubList.get(i).getHub().equals(device)) {
+                        try {
+                            ConnectedHubList.get(i).setMessage(new String(value, "ASCII"));
+                            updateList();
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
                 try {
                     updateLocalUi(new String(value, "ASCII"));
                 } catch (UnsupportedEncodingException e) {
@@ -729,55 +739,7 @@ public class GattServerActivity extends Activity {
                 // Invalid characteristic
                 Log.w(TAG, "Invalid Characteristic Read: " + characteristic.getUuid());
                 super.onCharacteristicReadRequest(device, requestId, offset, characteristic);
-                //mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_FAILURE, 0, null);
             }
         }
-
-//        @Override
-//        public void onDescriptorReadRequest(BluetoothDevice device, int requestId, int offset, BluetoothGattDescriptor descriptor) {
-//            if (CustomProfile.CLIENT_CONFIG.equals(descriptor.getUuid())) {
-//                Log.d(TAG, "Config descriptor read");
-//                byte[] returnValue;
-//                if (mRegisteredDevices.contains(device)) {
-//                    returnValue = BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE;
-//                } else {
-//                    returnValue = BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE;
-//                }
-//                mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_FAILURE, 0, returnValue);
-//            } else {
-//                Log.w(TAG, "Unknown descriptor read request");
-//                mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_FAILURE, 0, null);
-//            }
-//        }
-
-//        @Override
-//        public void onDescriptorWriteRequest(BluetoothDevice device, int requestId, BluetoothGattDescriptor descriptor, boolean preparedWrite, boolean responseNeeded, int offset, byte[] value) {
-//            if (CustomProfile.CLIENT_CONFIG.equals(descriptor.getUuid())) {
-//                if (Arrays.equals(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE, value)) {
-//                    Log.d(TAG, "Subscribe device to notifications: " + device);
-//                    mRegisteredDevices.add(device);
-//                } else if (Arrays.equals(BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE, value)) {
-//                    Log.d(TAG, "Unsubscribe device from notifications: " + device);
-//                    mRegisteredDevices.remove(device);
-//                }
-//
-//                if (responseNeeded) {
-//                    mBluetoothGattServer.sendResponse(device,
-//                            requestId,
-//                            BluetoothGatt.GATT_SUCCESS,
-//                            0,
-//                            null);
-//                }
-//            } else {
-//                Log.w(TAG, "Unknown descriptor write request");
-//                if (responseNeeded) {
-//                    mBluetoothGattServer.sendResponse(device,
-//                            requestId,
-//                            BluetoothGatt.GATT_FAILURE,
-//                            0,
-//                            null);
-//                }
-//            }
-//        }
     };
 }

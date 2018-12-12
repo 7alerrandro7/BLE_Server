@@ -15,6 +15,7 @@ public class ConnectedHub {
     private byte[] OTP;
     private byte[] timestamp;
     private byte[] AcceptedMessage = null;
+    private String message;
     private SecretKeySpec Ksession;
 
     public ConnectedHub(BluetoothDevice hub, int lastPackSize) {
@@ -103,4 +104,8 @@ public class ConnectedHub {
     public void setHub_fixID(String hub_fixID) {
         this.hub_fixID = hub_fixID;
     }
+
+    public String getMessage() { return message; }
+
+    public void setMessage(String message) { this.message = message; }
 }

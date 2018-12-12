@@ -12,12 +12,12 @@ import java.util.ArrayList;
 
 public class ConnectedHubAdapter extends ArrayAdapter<ConnectedHub> {
     private final Context context;
-    private final ArrayList<ConnectedHub> elementos;
+    private final ArrayList<ConnectedHub> elements;
 
-    public ConnectedHubAdapter(Context context, ArrayList<ConnectedHub> elementos){
-        super(context, R.layout.auth_users, elementos);
+    public ConnectedHubAdapter(Context context, ArrayList<ConnectedHub> elements){
+        super(context, R.layout.auth_users, elements);
         this.context = context;
-        this.elementos = elementos;
+        this.elements = elements;
     }
 
     @Override
@@ -25,10 +25,8 @@ public class ConnectedHubAdapter extends ArrayAdapter<ConnectedHub> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.auth_users, parent, false);
         TextView text = rowView.findViewById(R.id.users);
-        if(elementos.get(position).getHub() != null && elementos.get(position).getTimestamp() != null) {
-            int ts = ByteBuffer.wrap(elementos.get(position).getTimestamp()).getInt();
-            //text.setText("Cliente: " + elementos.get(position).hub.getName() + " \nTimeStamp: " + new java.util.Date(ts));
-            text.setText("Cliente: " + elementos.get(position).getHub().getName() + " \nTimeStamp: " + ts);
+        if(elements.get(position).getHub() != null && elements.get(position).getMessage() != null) {
+            text.setText("Cliente: " + elements.get(position).getHub().getName() + " \nMensagem enviada: " + elements.get(position).getMessage());
         }
         return rowView;
     }
