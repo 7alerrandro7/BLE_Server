@@ -21,7 +21,6 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
-import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattServer;
 import android.bluetooth.BluetoothGattServerCallback;
 import android.bluetooth.BluetoothManager;
@@ -64,7 +63,6 @@ public class GattServerActivity extends Activity {
     private static final String TAG = GattServerActivity.class.getSimpleName();
 
     /* Local UI */
-    private TextView mDataField_Security;
     private TextView mDataField;
     private ListView mList;
     /* Bluetooth API */
@@ -313,16 +311,6 @@ public class GattServerActivity extends Activity {
         });
     }
 
-    private void updateLocalUi(final String value) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                mDataField_Security = findViewById(R.id.security_value);
-                mDataField_Security.setText(value);
-            }
-        });
-    }
-
     private void updateList() {
         runOnUiThread(new Runnable() {
             @Override
@@ -558,11 +546,6 @@ public class GattServerActivity extends Activity {
                         }
                     }
                 }
-                try {
-                    updateLocalUi(new String(value, "ASCII"));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
                 mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, "ok".getBytes());
             }
         }
@@ -588,7 +571,7 @@ public class GattServerActivity extends Activity {
             if (value != null) {
                 if (CustomProfile.AUTH_WRITE_UUID.equals(characteristic.getUuid())) {
                     for (int i = 0; i < ConnectedHubList.size(); i++) {
-                        if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == false) {
+                        if (ConnectedHubList.get(i).getHub().equals(device) && !ConnectedHubList.get(i).isAuthenticated()) {
                             int lastPackSize = ConnectedHubList.get(i).getLastPackSize();
                             switch (ConnectedHubList.get(i).getSTATE()) {
                                 case 1:
@@ -680,15 +663,13 @@ public class GattServerActivity extends Activity {
                         }
                     }
                 }
-                if (CustomProfile.WRITE_UUID.equals(characteristic.getUuid())) {
-                    for (int i = 0; i < ConnectedHubList.size(); i++) {
-                        if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == true) {
-                            // HUB trying to write on SmartObject
-                            byte[] text_bytes = SecurityClass.Decrypt(value, ConnectedHubList.get(i).getKsession());
-                            onCharacteristicWriteRequestSecurity(device, requestId, characteristic, preparedWrite, responseNeeded, offset, text_bytes);
-                        } else {
-                            Log.w(TAG, "HUB not Authenticated!");
-                        }
+                for (int i = 0; i < ConnectedHubList.size(); i++) {
+                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated()) {
+                        // HUB trying to write on SmartObject
+                        byte[] text_bytes = SecurityClass.Decrypt(value, ConnectedHubList.get(i).getKsession());
+                        onCharacteristicWriteRequestSecurity(device, requestId, characteristic, preparedWrite, responseNeeded, offset, text_bytes);
+                    } else {
+                        Log.w(TAG, "HUB not Authenticated!");
                     }
                 }
                 Log.w(TAG, "Trying to write");
@@ -707,31 +688,20 @@ public class GattServerActivity extends Activity {
                 Log.i(TAG, "BYTES = " + MacAddress);
                 mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, MacAddress);
 
-            } else if(CustomProfile.GET_HELLO_UUID.equals(characteristic.getUuid())){
+            } else if(CustomProfile.SET_HELLO_UUID.equals(characteristic.getUuid())){
                 for(int i = 0; i < ConnectedHubList.size(); i++) {
-                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == true) {
+                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated()) {
                         mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, ConnectedHubList.get(i).getAcceptedMessage());
                     }
                 }
             } else if(CustomProfile.READ_UUID.equals(characteristic.getUuid())){
                 for(int i = 0; i < ConnectedHubList.size(); i++) {
-                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated() == true) {
+                    if (ConnectedHubList.get(i).getHub().equals(device) && ConnectedHubList.get(i).isAuthenticated()) {
                         EditText text_field;
                         text_field = findViewById(R.id.plain_text_input);
                         String text = text_field.getText().toString();
 
-                        byte [] text_in_bytes = new byte[0];
-                        try {
-                            text_in_bytes = SecurityClass.Encrypt(text, ConnectedHubList.get(i).getKsession());
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        } catch (InvalidKeyException e) {
-                            e.printStackTrace();
-                        } catch (NoSuchPaddingException e) {
-                            e.printStackTrace();
-                        } catch (NoSuchAlgorithmException e) {
-                            e.printStackTrace();
-                        }
+                        byte [] text_in_bytes = SecurityClass.Encrypt(text, ConnectedHubList.get(i).getKsession());
                         mBluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, text_in_bytes);
                     }
                 }

@@ -17,7 +17,6 @@
 package com.example.androidthings.gattserver;
 
 import android.bluetooth.BluetoothGattCharacteristic;
-import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 
 import java.util.UUID;
@@ -33,9 +32,9 @@ public class CustomProfile {
 
     /* Current Security Service UUID */
     public static UUID SECURITY_SERVICE = UUID.fromString("00001705-0000-1000-8000-00805f9b34fb");
-    /* Mandatory Get Hello Accepted Msg Read Information Characteristic */
-    public static UUID GET_HELLO_UUID = UUID.fromString("00002a2b-0000-1000-8000-00405f6b34cb");
-    /* Mandatory Get Mac Address Read Information Characteristic */
+    /* Mandatory Set Hello Accepted Msg Characteristic */
+    public static UUID SET_HELLO_UUID = UUID.fromString("00002a2b-0000-1000-8000-00405f6b34cb");
+    /* Mandatory Get Mac Address Characteristic */
     public static UUID GET_MAC_UUID = UUID.fromString("00002a2b-0000-1000-8000-00305f9b34fb");
     /* Mandatory Write My MacAddress Characteristic */
     public static UUID SET_MAC_UUID = UUID.fromString("00000001-0000-1000-8000-00605f9b34fb");
@@ -67,7 +66,7 @@ public class CustomProfile {
                 PROPERTY_READ, PERMISSION_READ);
 
         // Hello Message characteristic
-        BluetoothGattCharacteristic GetHelloCharacteristic = new BluetoothGattCharacteristic(GET_HELLO_UUID,
+        BluetoothGattCharacteristic GetHelloCharacteristic = new BluetoothGattCharacteristic(SET_HELLO_UUID,
                 //Read-only characteristic
                 PROPERTY_READ, PERMISSION_READ);
 

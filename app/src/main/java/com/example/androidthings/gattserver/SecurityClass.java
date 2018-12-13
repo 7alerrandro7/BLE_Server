@@ -9,96 +9,44 @@ import java.security.*;
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 
-public class SecurityClass {
+class SecurityClass {
 
     public static final String TAG = "SecurityKey_LOG";
     //final static String path = Environment.getExternalStorageDirectory().getPath() + "/keys/";
 
-    public static String Decrypt(byte[] text) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
-
-
-        Log.d(TAG, "Bytes = " + text.toString());
-
-        byte [] key = "AAAAA".getBytes("ASCII");
-
-        Cipher rc4 = Cipher.getInstance("RC4");
-        SecretKeySpec rc4Key = new SecretKeySpec(key, "RC4");
-        rc4.init(Cipher.DECRYPT_MODE, rc4Key);
-
-        byte [] cipherText = rc4.update(text);
-
-        return(new String(cipherText, "ASCII"));
-
-    }
-
-    public static byte[] Decrypt(byte[] text, SecretKeySpec Ksession){
+    static byte[] Decrypt(byte[] text, SecretKeySpec Ksession){
 
         Cipher rc4 = null;
         try {
             rc4 = Cipher.getInstance("RC4");
             rc4.init(Cipher.DECRYPT_MODE, Ksession);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException e) {
             e.printStackTrace();
         }
 
         byte[] cipherText = rc4.update(text);
-        Log.d(TAG, "Texto Limpo: " + cipherText);
 
         return(cipherText);
     }
 
-    public static byte[] Encrypt(String text) throws UnsupportedEncodingException, InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException {
+    static byte[] Encrypt(String text, SecretKeySpec Ksession) {
 
-        byte[] plainText = text.getBytes("ASCII");
-
-        Log.i(TAG, text);
-
-        byte [] key = "AAAAA".getBytes("ASCII");
-
-        Cipher rc4 = Cipher.getInstance("RC4");
-        SecretKeySpec rc4Key = new SecretKeySpec(key, "RC4");
-        rc4.init(Cipher.ENCRYPT_MODE, rc4Key);
-
-        byte [] cipherText = rc4.update(plainText);
-
-        // converte o cipherText para hexadecimal
-        StringBuffer buf = new StringBuffer();
-        for(int i = 0; i < cipherText.length; i++) {
-            String hex = Integer.toHexString(0x0100 + (cipherText[i] & 0x00FF)).substring(1);
-            buf.append((hex.length() < 2 ? "0" : "") + hex);
+        byte[] plainText = new byte[0];
+        try {
+            plainText = text.getBytes("ASCII");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
 
-        // imprime o ciphertext em hexadecimal
-        Log.i(TAG, buf.toString());
-
-        return(cipherText);
-
-    }
-
-    public static byte[] Encrypt(String text, SecretKeySpec Ksession) throws UnsupportedEncodingException, InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException {
-
-        byte[] plainText = text.getBytes("ASCII");
-
-        Log.i(TAG, text);
-
-        Cipher rc4 = Cipher.getInstance("RC4");
-        rc4.init(Cipher.ENCRYPT_MODE, Ksession);
-
-        byte [] cipherText = rc4.update(plainText);
-
-        // converte o cipherText para hexadecimal
-        StringBuffer buf = new StringBuffer();
-        for(int i = 0; i < cipherText.length; i++) {
-            String hex = Integer.toHexString(0x0100 + (cipherText[i] & 0x00FF)).substring(1);
-            buf.append((hex.length() < 2 ? "0" : "") + hex);
+        Cipher rc4 = null;
+        try {
+            rc4 = Cipher.getInstance("RC4");
+            rc4.init(Cipher.ENCRYPT_MODE, Ksession);
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException e) {
+            e.printStackTrace();
         }
 
-        // imprime o ciphertext em hexadecimal
-        Log.i(TAG, buf.toString());
+        byte [] cipherText = rc4.update(plainText);
 
         return(cipherText);
 

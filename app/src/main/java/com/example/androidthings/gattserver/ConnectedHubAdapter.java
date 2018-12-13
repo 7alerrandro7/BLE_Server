@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 public class ConnectedHubAdapter extends ArrayAdapter<ConnectedHub> {
